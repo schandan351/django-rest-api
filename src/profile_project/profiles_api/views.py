@@ -2,8 +2,10 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import HelloSerializer
+from .serializers import HelloSerializer,UserProfileSerializer
 from rest_framework import viewsets
+
+from . import models
 # Create your views here.
 
 
@@ -80,3 +82,6 @@ class HelloViewSet(viewsets.ViewSet):
 
 
 
+class UserProfileViewset(viewsets.ModelViewSet):
+    serializer_class=UserProfileSerializer
+    queryset=models.UserProfile.objects.all()
