@@ -1,9 +1,10 @@
 from django.conf.urls import url,include
 from rest_framework.routers import DefaultRouter
-from .views import HelloApiView,HelloViewSet,UserProfileViewset
+from .views import HelloApiView,HelloViewSet,UserProfileViewset,LoginViewSet
 router=DefaultRouter()
 router.register('hello-viewset',HelloViewSet,base_name='hello-viewset')
 router.register('profile',UserProfileViewset)
+router.register('login',LoginViewSet,base_name='login')
 
 
 urlpatterns=[
